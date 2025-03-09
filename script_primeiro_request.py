@@ -63,3 +63,4 @@ def fetch_all_insights():
 # Se preferir, chame a função diretamente ao rodar o script
 if __name__ == "__main__":
     fetch_all_insights()
+

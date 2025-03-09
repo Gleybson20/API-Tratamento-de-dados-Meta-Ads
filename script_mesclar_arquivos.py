@@ -20,3 +20,4 @@ with open(output_file, "w", encoding="utf-8") as f:
     json.dump(all_data, f, indent=4, ensure_ascii=False)
 
 print(f"Arquivo mesclado salvo em: {output_file}")
+

@@ -8,7 +8,7 @@ DB_CONFIG = {
     "host": "localhost",
     "port": "5432"
 }
-
+ 
 def conectar_banco():
     """Estabelece conexão com o PostgreSQL."""
     try:

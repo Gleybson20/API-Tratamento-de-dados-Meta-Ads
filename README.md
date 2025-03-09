@@ -1,7 +1,7 @@
 # 📊 Tratamento de Dados - Ser Educacional  
 
 ## 📌 Visão Geral
-Este projeto realiza **extração, tratamento, armazenamento e análise de dados de campanhas publicitárias** do **Meta Ads API**. Os dados são processados e consolidados em relatórios detalhados no formato Excel, permitindo otimizar estratégias de marketing e tomada de decisão baseada em métricas precisas.
+Este projeto realiza **extração, tratamento, armazenamento e análise de dados de campanhas publicitárias** do **Meta Ads API**. Os dados são processados, tratados e consolidados em relatórios detalhados no formato Excel, permitindo otimizar estratégias de marketing e tomada de decisão baseada em métricas precisas.
 
 ---
 

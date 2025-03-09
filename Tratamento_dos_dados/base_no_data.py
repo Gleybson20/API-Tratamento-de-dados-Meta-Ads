@@ -80,3 +80,4 @@ if __name__ == "__main__":
     output_file = "nome_do_arquivo.xlsx"
     df.to_excel(output_file, index=False)
     print(f"Planilha gerada e salva em: {output_file}")
+

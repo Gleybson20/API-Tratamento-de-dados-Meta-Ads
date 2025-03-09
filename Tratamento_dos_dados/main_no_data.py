@@ -15,3 +15,4 @@ df = create_dataframe(processed_data)
 # Salva os dados no Excel
 df.to_excel(output_file, index=False)
 print(f"Processamento concluído e planilha gerada: {output_file}")
+

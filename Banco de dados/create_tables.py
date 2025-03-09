@@ -8,7 +8,7 @@ DB_CONFIG = {
     "host": "localhost",
     "port": "5432"
 }
-
+ 
 # Função para criar as tabelas
 def criar_tabelas():
     try:

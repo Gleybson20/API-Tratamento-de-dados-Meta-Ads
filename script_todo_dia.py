@@ -86,5 +86,3 @@ if __name__ == "__main__":
     for account_id in lista_de_contas:
         print(f"\n--- Coletando dados da conta: {account_id} ---")
         fetch_insights_yesterday(account_id, ACCESS_TOKEN)
-
-

@@ -1,5 +1,5 @@
 import psycopg2
-
+ 
 # Configuração para conectar ao PostgreSQL sem um banco específico
 conn = psycopg2.connect(
     dbname="databases",  # Conectar ao banco padrão do PostgreSQL
