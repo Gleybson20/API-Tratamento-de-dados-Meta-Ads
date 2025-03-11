@@ -142,3 +142,13 @@ with open("arquivo.json", "r", encoding="utf-8") as f:
 
 # 📌 Conclusão
 Este projeto automatiza a coleta e análise de dados de campanhas no Meta Ads, garantindo informações estruturadas e relatórios detalhados. 🚀
+
+# Créditos - Equipe
+
+**Sérgio Soriano**
+
+**Samuel Félix**
+
+**Pedro Raphael**
+
+**Gleybson Ricardo**
