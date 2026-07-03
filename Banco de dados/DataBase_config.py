@@ -1,6 +1,5 @@
 import psycopg2
 
-# Configuração do banco de dados
 DB_CONFIG = {
     "dbname": "Database",
     "user": "postgres",
@@ -8,22 +7,17 @@ DB_CONFIG = {
     "host": "localhost",
     "port": "5432"
 }
- 
-# Função para criar as tabelas
+
 def criar_tabelas():
     try:
         conn = psycopg2.connect(**DB_CONFIG)
         cursor = conn.cursor()
-
-        # 1. Criar a tabela de unidades
         cursor.execute("""
         CREATE TABLE IF NOT EXISTS dados_meta (
             id_conta BIGINT PRIMARY KEY,   -- ID da conta
             nome_unidade TEXT NOT NULL     -- Nome da unidade (ex: 'Cabo', 'Cacoal', etc.)
         );
         """)
-
-        # 2. Criar a tabela de anuncios_json
         cursor.execute("""
         CREATE TABLE IF NOT EXISTS dad0s_json (
             id SERIAL PRIMARY KEY,           -- Identificador único para cada entrada
@@ -40,12 +34,9 @@ def criar_tabelas():
             conversas_iniciadas INT         -- Total de conversas iniciadas
         );
         """)
-
-        # Confirmar as alterações no banco de dados
         conn.commit()
         print("✅ Tabela criadas com sucesso!")
 
-        # Fechar a conexão
         cursor.close()
         conn.close()
 
@@ -54,3 +45,23 @@ def criar_tabelas():
 
 if __name__ == "__main__":
     criar_tabelas()
+
+
+conn = psycopg2.connect(
+    dbname="databases",
+    user="postgres",
+    password="senha",
+    host="localhost",
+    port="5432"
+)
+conn.autocommit = True
+cursor = conn.cursor()
+DATABASE_NAME = "Database"
+
+try:
+    cursor.execute(f"CREATE DATABASE {DATABASE_NAME}")
+    print(f"✅ Banco de dados '{DATABASE_NAME}' criado com sucesso!")
+except psycopg2.errors.DuplicateDatabase:
+    print(f"⚠️ O banco de dados '{DATABASE_NAME}' já existe.")
+cursor.close()
+conn.close()

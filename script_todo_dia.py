@@ -37,27 +37,18 @@ def fetch_insights_yesterday(account_id, access_token):
 
         # Carrega os dados JSON
         dados = resposta.json()
-
-        # Verifica se a resposta possui o campo "data"
         if "data" in dados:
-            # "data" normalmente é uma lista de objetos de insights
             todos_os_dados.extend(dados["data"])
         else:
             print("Nenhum campo 'data' encontrado nessa resposta. Encerrando.")
             break
 
-        # 3. Verificar se existe próximo link em "paging.next"
-        #    (em vez de "pagination", a Graph API usa "paging")
         if "paging" in dados and "next" in dados["paging"]:
             url_atual = dados["paging"]["next"]
-            
-            # Espera 5 ms antes de fazer a próxima requisição
             time.sleep(0.005)
         else:
-            # Não há próxima página
             url_atual = None
 
-    # Por fim, salva tudo em um único arquivo JSON
     nome_arquivo = f"{account_id}arquivo.json"
     with open(nome_arquivo, "w", encoding="utf-8") as f:
         json.dump(todos_os_dados, f, indent=4, ensure_ascii=False)
@@ -66,17 +57,7 @@ def fetch_insights_yesterday(account_id, access_token):
 
 
 if __name__ == "__main__":
-    # Exemplo de uso:
-    # Se tiver apenas uma conta, basta chamar a função para aquela conta.
-    # Caso tenha várias, repita para cada ID.
-
-    # Defina seu token de acesso (Access Token do Meta)
     ACCESS_TOKEN = "Token de acesso"
-
-    # Caso você tenha apenas UMA conta:
-    # fetch_insights_yesterday("1234567890", ACCESS_TOKEN)
-
-    # Caso tenha VÁRIAS contas, itere sobre elas:
     lista_de_contas = [
         "1234567890",
         "2345678901",
